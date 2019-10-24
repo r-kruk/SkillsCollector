@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -29,7 +29,7 @@ public class User {
     @Column(unique = true, nullable = false)
     private String password;
     @Column(unique = true, nullable = false, name="username")
-    private String userName;
+    private String username;
 
 
     public Set<Source> getSources() {
@@ -72,12 +72,12 @@ public class User {
         this.password = password;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override
@@ -90,12 +90,12 @@ public class User {
                 && Objects.equals(firstName, user.firstName)
                 && Objects.equals(lastName, user.lastName)
                 && Objects.equals(password, user.password)
-                && Objects.equals(userName, user.userName);
+                && Objects.equals(username, user.username);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, password, userName);
+        return Objects.hash(id, firstName, lastName, password, username);
     }
 
     @Override
@@ -105,7 +105,7 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", password='" + password + '\'' +
-                ", userName='" + userName + '\'' +
+                ", userName='" + username + '\'' +
                 '}';
     }
 }
